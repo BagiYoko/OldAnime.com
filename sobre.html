@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Old Animes - Sobre</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (sessionStorage.getItem("logado") !== "true") {
+            alert("Acesso negado!"); window.location.href = "login.html";
+        }
+    </script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top border-bottom border-secondary">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand font-monospace fw-bold text-white" href="index.html">OLD ANIMES</a>
+            <div class="collapse navbar-collapse justify-content-between">
+                <ul class="navbar-nav fw-semibold">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicos.html">Catálogo/Streaming</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cadastro.html">Novo Membro</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="sobre.html">Sobre a Plataforma</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="form-check form-switch m-0">
+                        <input class="form-check-input bg-secondary border-0 cursor-pointer" type="checkbox" id="darkModeToggle">
+                        <label class="form-check-label text-light small" for="darkModeToggle"><i class="fa-solid fa-moon"></i> Theme</label>
+                    </div>
+                    <button class="btn btn-sm btn-outline-light fw-bold" id="btnLogout">Sair</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5 max-w-form animate-fade">
+        <div class="p-4 rounded-3 border border-secondary shadow-lg bg-black text-white">
+            <h4 class="mb-4 font-monospace border-bottom border-secondary pb-2 text-center">HISTÓRICO DO SISTEMA</h4>
+            
+            <p class="small lh-lg text-secondary">
+                A plataforma <strong>Old Animes</strong> nasceu originalmente como um protótipo conceitual estrito focado no resgate das estéticas visuais das décadas de 1980 e 1990. O objetivo técnico principal é aplicar de forma aplicada um ambiente compacto, responsivo e de alta fidelidade visual.
+            </p>
+            <p class="small lh-lg text-secondary">
+                Desenvolvido como projeto integrador de avaliação continuada do <strong>2º Bimestre</strong>, o ecossistema utiliza conceitos de persistência de estado do utilizador local via cache do navegador (LocalStorage e SessionStorage), mantendo a integridade estrutural e segurança na navegação de rotas protegidas por scripts nativos.
+            </p>
+            
+            <div class="mt-4 p-3 border border-secondary rounded bg-dark-custom">
+                <h6 class="small fw-bold text-white mb-2 font-monospace"><i class="fa-solid fa-code"></i> Especificações de Desenvolvimento:</h6>
+                <ul class="x-small text-muted mb-0 ps-3">
+                    <li>Framework de Estruturação: Bootstrap v5.3</li>
+                    <li>Lógica e Controle de Rotas: Vanilla JavaScript (ES6)</li>
+                    <li>Estilização e Animações customizadas: CSS3 Keyframes</li>
+                    <li>Gama de Cores: Monocromática (Preto e Branco)</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

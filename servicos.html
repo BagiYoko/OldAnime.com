@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Old Animes - Streaming & Episódios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (sessionStorage.getItem("logado") !== "true") {
+            alert("Acesso negado!"); window.location.href = "login.html";
+        }
+    </script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top border-bottom border-secondary">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand font-monospace fw-bold text-white" href="index.html">OLD ANIMES</a>
+            <div class="collapse navbar-collapse justify-content-between">
+                <ul class="navbar-nav fw-semibold">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="servicos.html">Catálogo/Streaming</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cadastro.html">Novo Membro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre a Plataforma</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="form-check form-switch m-0">
+                        <input class="form-check-input bg-secondary border-0 cursor-pointer" type="checkbox" id="darkModeToggle">
+                        <label class="form-check-label text-light small" for="darkModeToggle"><i class="fa-solid fa-moon"></i> Theme</label>
+                    </div>
+                    <button class="btn btn-sm btn-outline-light fw-bold" id="btnLogout">Sair</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+  <div class="container my-4 animate-fade">
+        <div class="row">
+            
+            <div class="col-md-4">
+                <h5 class="text-white mb-3 font-monospace border-bottom border-secondary pb-2">Selecionar Episódio</h5>
+                <div class="list-group list-group-custom border border-secondary rounded">
+                    <button type="button" class="list-group-item list-group-item-action bg-black text-white border-secondary active" onclick="loadEpisode('Yu Yu Hakusho - Episódio 01', 'Yusuke Urameshi, um delinquente de 14 anos, morre atropelado ao salvar um garotinho. No além, a guia Botan revela que sua morte foi um erro surpresa, pois o menino sobreviveria sem ele...', '@OtakuAntigo99', 'Foda')">
+                        <i class="fa-solid fa-play me-2"></i> Yu Yu Hakusho - Episódio 01 
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action bg-black text-white border-secondary" onclick="loadEpisode('Akira (1988)', 'O avanço das corporações tecnológicas fictícias e o choque geracional marcado pelas trilhas sonoras de sintetizadores clássicos no coração de Tóquio retro-futurista.', '@CyberPunk90', 'Uma obra-prima visual indispensável!')">
+                        <i class="fa-solid fa-play me-2"></i> Akira (1988)
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action bg-black text-white border-secondary" onclick="loadEpisode('Slam Dunk - Episódio 01', 'O desfecho do primeiro arco narrativo focado em reflexões desportivas, determinação, muitas risadas e na estética clássica das quadras dos anos 90.', '@BasqueteTotal', 'Incrivelmente divertido e motivador.')">
+                        <i class="fa-solid fa-play me-2"></i> Slam Dunk - Episódio 01
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action bg-black text-white border-secondary" onclick="loadEpisode('Neon Genesis Evangelion - Episódio 01', 'Shinji Ikari chega à cidade fortificada de Tokyo-3 e é forçado por seu pai a pilotar o gigante robô humanóide EVA-01 para combater os misteriosos Anjos.', '@EvaManiac', 'Complexo, profundo e com uma atmosfera incrível.')">
+                        <i class="fa-solid fa-play me-2"></i> Neon Genesis Evangelion - Episódio 01
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="p-4 rounded-3 border border-secondary shadow-lg bg-black text-white" id="player-zone">
+                    <h3 id="view-title" class="fw-bold text-white mb-2 font-monospace">Yu Yu Hakusho - Episódio 01</h3>
+                    
+                    <div class="row my-3 align-items-center">
+                        <div class="col-md-7">
+                            <h6 class="text-secondary tracking-wide uppercase fw-bold">História / Sinopse:</h6>
+                            <p id="view-desc" class="text-muted small lh-base">
+                                "Yusuke Urameshi, um delinquente de 14 anos, morre atropelado ao salvar um garotinho. No além, a guia Botan revela que sua morte foi um erro surpresa, pois o menino sobreviveria sem ele..."
+                            </p>
+                        </div>
+                        <div class="col-md-5 text-center">
+                            <div class="video-placeholder rounded border border-secondary bg-dark shadow flex-center">
+                                <i class="fa-solid fa-circle-play fa-3x text-light opacity-75 mb-2"></i>
+                                <span class="d-block text-secondary x-small px-2">Video Stream Ativo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-top border-secondary">
+                        <h6 class="font-monospace text-white mb-3"><i class="fa-solid fa-comments"></i> Opiniões dos Fãs</h6>
+                        <div id="comments-box" class="mb-3 max-h-comments pe-2">
+                            <div class="p-2 mb-2 bg-dark-custom rounded border-start border-white border-3 animate-fade">
+                                <strong class="small d-block text-white">@OtakuAntigo99</strong>
+                                <span class="text-secondary small">Foda</span>
+                            </div>
+                        </div>
+
+                        <div class="input-group input-group-sm mt-3">
+                            <input type="text" id="user-opinion" class="form-control bg-transparent text-white border-secondary" placeholder="Deixe a sua opinião sobre este episódio...">
+                            <button class="btn btn-light fw-bold" type="button" id="btnSendOpinion">Publicar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div> 
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

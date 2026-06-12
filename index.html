@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Old Animes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // SEGURANÇA BÁSICA: Executado imediatamente antes do render da página
+        if (sessionStorage.getItem("logado") !== "true") {
+            alert("Acesso negado! Por favor, faça login.");
+            window.location.href = "login.html";
+        }
+    </script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top border-bottom border-secondary">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand font-monospace fw-bold tracking-wider text-white" href="index.html">OLD ANIMES</a>
+            <button class="navbar-expand-lg navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav mb-2 mb-lg-0 fw-semibold">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicos.html">Catálogo/Streaming</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cadastro.html">Novo Membro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre a Plataforma</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="form-check form-switch m-0">
+                        <input class="form-check-input bg-secondary border-0 cursor-pointer" type="checkbox" id="darkModeToggle">
+                        <label class="form-check-label text-light small cursor-pointer" for="darkModeToggle"><i class="fa-solid fa-moon"></i> Theme</label>
+                    </div>
+                    <button class="btn btn-sm btn-outline-light fw-bold px-3" id="btnLogout"><i class="fa-solid fa-right-from-bracket"></i> Sair</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselAnimes" class="carousel slide carousel-fade container mt-4" data-bs-ride="carousel">
+        <div class="carousel-inner rounded-3 shadow-lg border border-secondary">
+            <div class="carousel-item active" data-bs-interval="4000">
+                <img src="https://wallpapercg.com/media/ts_orig/19938.webp" class="d-block w-100 carousel-img" alt="Neon Genesis Evangelion">
+                <div class="carousel-caption d-none d-md-block bg-black-blur text-start p-4 rounded border-start border-white border-4">
+                    <h5 class="fw-bold tracking-wide">Neon Genesis Evangelion (1995)</h5>
+                    <p class="text-secondary small">Em um mundo pós-apocalíptico, adolescentes são os únicos capazes de pilotar os EVAs para defender a humanidade de criaturas misteriosas chamadas Anjos. Porém, por trás da ação mecânica, o anime é um profundo drama psicológico que explora depressão, traumas familiares e crises existenciais, tornando-se uma das obras mais influentes da história da cultura pop.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="https://wallpapers.com/images/hd/anime-art-black-and-white-cowboy-bebop-spike-uwtgbcnodrkrnxm9.jpg" class="d-block w-100 carousel-img" alt="Cowboy Bebop">
+                <div class="carousel-caption d-none d-md-block bg-black-blur text-start p-4 rounded border-start border-white border-4">
+                    <h5 class="fw-bold tracking-wide">Cowboy Bebop (1998)</h5>
+                    <p class="text-secondary small">Em um futuro onde a humanidade se espalhou pelo sistema solar, um grupo excêntrico de caçadores de recompensas viaja a bordo da nave Bebop tentando pagar as contas. Combinando uma atmosfera cyberpunk, artes marciais e uma trilha sonora icônica de jazz, o anime usa a ficção científica para explorar temas profundos como a solidão, o existencialismo e a dolorosa incapacidade de fugir do próprio passado.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselAnimes" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselAnimes" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <main class="container my-5 animate-fade">
+        <h4 class="mb-4 text-white font-monospace border-bottom border-secondary pb-2"><i class="fa-solid fa-fire"></i> Adicionados Recentemente</h4>
+        
+        <div class="row row-cols-1 row-cols-md-4 g-4 text-center">
+            <div class="col">
+                <div class="card bg-black h-100 border border-secondary anime-card">
+                    <img src="https://getwallpapers.com/wallpaper/full/4/b/2/1085956-yu-yu-hakusho-wallpapers-1920x1080-cell-phone.jpg" class="card-img-top card-anime-img" alt="Anime Antigo">
+                    <div class="card-body text-white">
+                        <h6 class="card-title fw-bold">Yu Yu Hakusho</h6>
+                        <p class="card-text text-secondary text-truncate-2 small">A jornada clássica espiritual de Yusuke Urameshi no submundo.</p>
+                        <a href="servicos.html" class="btn btn-sm btn-light w-100 fw-bold mt-2">Ver Episódios</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card bg-black h-100 border border-secondary anime-card">
+                    <img src="https://wallpapercave.com/wp/wp10450517.jpg" class="card-img-top card-anime-img" alt="Anime Antigo">
+                    <div class="card-body text-white">
+                        <h6 class="card-title fw-bold">Akira (1988)</h6>
+                        <p class="card-text text-secondary text-truncate-2 small">O cyberpunk raiz que moldou o conceito de distopia futurista em Neo-Tokyo.</p>
+                        <a href="servicos.html" class="btn btn-sm btn-light w-100 fw-bold mt-2">Ver Episódios</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card bg-black h-100 border border-secondary anime-card">
+                    <img src="https://wallpapercave.com/wp/wp4069878.jpg" class="card-img-top card-anime-img" alt="Anime Antigo">
+                    <div class="card-body text-white">
+                        <h6 class="card-title fw-bold">Slam Dunk</h6>
+                        <p class="card-text text-secondary text-truncate-2 small">A genialidade do basquetebol dos anos 90 cheia de paixão e rivalidade.</p>
+                        <a href="servicos.html" class="btn btn-sm btn-light w-100 fw-bold mt-2">Ver Episódios</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card bg-black h-100 border border-secondary anime-card">
+                    <img src="https://s2-techtudo.glbimg.com/6SMR1O_FITNOn0zjIwx91jRPeVs=/0x0:1086x681/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2024/f/n/BCvowPTtyyjJOqB8jVPQ/neon-genesis-imdb.png" class="card-img-top card-anime-img" alt="Anime Antigo">
+                    <div class="card-body text-white">
+                        <h6 class="card-title fw-bold">Neon Genesis Evangelion</h6>
+                        <p class="card-text text-secondary text-truncate-2 small">Shinji Ikari, um adolescente solitário, é forçado por seu pai a pilotar o EVA-01, um gigante robô humanóide, para defender a humanidade contra criaturas misteriosas conhecidas como Anjos.</p>
+                        <a href="servicos.html" class="btn btn-sm btn-light w-100 fw-bold mt-2">Ver Episódios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center text-secondary py-3 border-top border-secondary bg-black small mt-auto">
+        &copy; 2026 Old Animes Platform. Fins estritamente académicos.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

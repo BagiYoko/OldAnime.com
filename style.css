@@ -1,0 +1,161 @@
+:root {
+    --bg-main: #000000;
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --border-color: #2a2a2a;
+    --bg-card: #0a0a0a;
+}
+
+/* Modificadores para Light Mode ativado via JavaScript */
+body.light-theme {
+    --bg-main: #f5f5f5;
+    --text-main: #000000;
+    --text-muted: #4a4a4a;
+    --border-color: #dcdcdc;
+    --bg-card: #ffffff;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: system-ui, -apple-system, sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fundo desfocado (Blur) para a tela de Catálogos e login */
+.login-body, body {
+    background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://wallpapers.com/images/hd/black-and-white-anime-1200-x-900-background-dxbvs0laal6lanz7.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+    animation: fadeIn 0.5s ease forward;
+}
+
+.login-container {
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 2.5rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    color: #fff;
+    animation: fadeIn 0.6s ease;
+}
+
+.input-group-custom {
+    position: relative;
+}
+
+.input-group-custom input {
+    padding-left: 2.5rem !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    border-radius: 6px;
+}
+
+.input-group-custom input:focus {
+    box-shadow: none;
+    border-color: #fff !important;
+}
+
+.icon-input {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255,255,255,0.5);
+    z-index: 5;
+}
+
+.bg-black-blur {
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+}
+
+.carousel-img {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Efeito de escala nos cards ao passar o rato (hover) */
+.anime-card {
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s;
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+}
+
+.anime-card:hover {
+    transform: scale(1.05);
+    border-color: var(--text-main) !important;
+    z-index: 10;
+}
+
+.card-anime-img {
+    height: 160px;
+    object-fit: cover;
+    filter: grayscale(40%);
+    transition: filter 0.3s;
+}
+
+.anime-card:hover .card-anime-img {
+    filter: grayscale(0%);
+}
+
+.list-group-custom .list-group-item {
+    border-color: var(--border-color);
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.list-group-custom .list-group-item.active {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
+}
+
+.video-placeholder {
+    height: 180px;
+    background-color: #111 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.max-h-comments {
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.bg-dark-custom {
+    background-color: rgba(255,255,255,0.05);
+}
+
+.max-w-form {
+    max-width: 650px;
+}
+
+/* Helpers utilitários */
+.cursor-pointer { cursor: pointer; }
+.tracking-wider { tracking-wider: 0.15em; }
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+.x-small { font-size: 0.75rem; }

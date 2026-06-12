@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Old Animes - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+
+    <div class="login-container">
+        <h2 class="text-center mb-4 font-monospace fw-bold">OLD ANIMES</h2>
+        
+        <div id="login-alert" class="alert alert-danger d-none animate-fade" role="alert">
+            Usuário ou Senha incorretos!
+        </div>
+
+        <form id="login-form">
+            <div class="mb-3 input-group-custom">
+                <i class="fa-solid fa-user icon-input"></i>
+                <input type="text" id="username" class="form-control bg-transparent text-white" placeholder="Usuário (Ex: ADM)" required>
+            </div>
+            <div class="mb-4 input-group-custom">
+                <i class="fa-solid fa-lock icon-input"></i>
+                <input type="password" id="password" class="form-control bg-transparent text-white" placeholder="Senha (Ex: 123)" required>
+            </div>
+            <button type="submit" class="btn btn-light w-100 fw-bold btn-login-submit">ENTRAR</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
